@@ -1,10 +1,6 @@
 package com.example.demo.service;
 
 import com.example.demo.genre.Genre;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +29,15 @@ public class genreService {
 
     public void addGenre(Genre genre){
         genres.add(genre);
+    }
+
+    public void updateGenre(String type, Genre genre){
+       for(int i =0; i<genres.size(); i++){
+           Genre g = genres.get(i);
+           if(g.getType().equals(type)){
+               genres.set(i, genre);
+           }
+       }
     }
 
 
