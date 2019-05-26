@@ -28,5 +28,16 @@ public class Controller {
         myService.addGenre(genre);
     }
 
+    @RequestMapping(method = RequestMethod.PUT, value = "/genres/{type}")
+    public void updateGenre(@RequestBody Genre genre, @PathVariable String type){
+        myService.updateGenre(type, genre);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/genres/{type}")
+    public void deleteGenre(@PathVariable String type){
+        myService.deleteGenre(type);
+    }
+
+
 
 }
